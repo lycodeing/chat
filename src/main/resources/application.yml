@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: chat
+
+server:
+  port: 8888
