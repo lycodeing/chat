@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lycodeing.chat.mapper.FriendRequestsMapper">
+
+    <resultMap id="BaseResultMap" type="com.lycodeing.chat.entity.FriendRequests">
+            <id property="requestId" column="request_id" jdbcType="INTEGER"/>
+            <result property="requesterId" column="requester_id" jdbcType="INTEGER"/>
+            <result property="recipientId" column="recipient_id" jdbcType="INTEGER"/>
+            <result property="status" column="status" jdbcType="OTHER"/>
+            <result property="message" column="message" jdbcType="VARCHAR"/>
+            <result property="createdAt" column="created_at" jdbcType="TIMESTAMP"/>
+            <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        request_id,requester_id,recipient_id,
+        status,message,created_at,
+        is_deleted
+    </sql>
+</mapper>
