@@ -1,6 +1,26 @@
 spring:
   application:
     name: chat
-
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 配置批量操作
+    url: jdbc:mysql://localhost:3306/chat?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&useBatchMultiSend=true&allowMultiQueries=true
+    username: root
+    password: root
 server:
   port: 8888
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**.xml
+  type-aliases-package: com.lycodeing.chat.entity
+  global-config:
+    # 全局配置
+    db-config:
+      # 数据库配置
+      id-type: ASSIGN_ID
+      # 逻辑删除配置
+      logic-delete-field: isDeleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    # banner图开关
+    banner: false
